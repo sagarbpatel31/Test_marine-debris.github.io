@@ -13,7 +13,7 @@ import numpy as np
 from glob import glob
 from tqdm import tqdm
 from shutil import copyfile
-from skimage import feature
+#from skimage import feature
 from functools import partial
 from os.path import dirname as up
 from skimage.color import rgb2gray
