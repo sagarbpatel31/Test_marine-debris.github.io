@@ -65,12 +65,12 @@ def bsi(band2, band4, band8, band10):
 
 # GLCM properties
 def glcm_feature(matrix_coocurrence):
-    contrast = greycoprops(matrix_coocurrence, 'contrast')
-    dissimilarity = greycoprops(matrix_coocurrence, 'dissimilarity')
-    homogeneity = greycoprops(matrix_coocurrence, 'homogeneity')
-    energy = greycoprops(matrix_coocurrence, 'energy')
-    correlation = greycoprops(matrix_coocurrence, 'correlation')
-    asm = greycoprops(matrix_coocurrence, 'ASM')
+    contrast = graycoprops(matrix_coocurrence, 'contrast')
+    dissimilarity = graycoprops(matrix_coocurrence, 'dissimilarity')
+    homogeneity = graycoprops(matrix_coocurrence, 'homogeneity')
+    energy = graycoprops(matrix_coocurrence, 'energy')
+    correlation = graycoprops(matrix_coocurrence, 'correlation')
+    asm = graycoprops(matrix_coocurrence, 'ASM')
     
     return contrast.item(), dissimilarity.item(), homogeneity.item(), energy.item(), correlation.item(), asm.item()
 
@@ -181,7 +181,7 @@ def texture(image, window_size = 13, max_value = 16):
                     inds = np.digitize(temp_gray_window, bins)
 
                     # Calculate on E, NE, N, NW as well as symmetric. So calculation on all directions and with 1 pixel offset-distance
-                    matrix_coocurrence = greycomatrix(inds, [1], [0, np.pi/4, np.pi/2, 3*np.pi/4], levels=num_levels, normed=True, symmetric=True)
+                    matrix_coocurrence = graycomatrix(inds, [1], [0, np.pi/4, np.pi/2, 3*np.pi/4], levels=num_levels, normed=True, symmetric=True)
 
                     # Aggregate all directions
                     matrix_coocurrence = matrix_coocurrence.mean(3)[:,:,:,np.newaxis]
