@@ -18,7 +18,7 @@ from functools import partial
 from os.path import dirname as up
 from skimage.color import rgb2gray
 from joblib import Parallel, delayed
-from skimage.feature import greycomatrix, greycoprops, local_binary_pattern
+from skimage.feature import graycomatrix, graycoprops, local_binary_pattern
 
 root_path = up(up(up(os.path.abspath(__file__))))
 
